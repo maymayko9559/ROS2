@@ -229,7 +229,8 @@
 			"destination" : "share/my_robot_description/",
 			"paths" : 
 			[
-				"urdf"
+				"urdf",
+				"launch"
 			],
 			"type" : "directory"
 		},
