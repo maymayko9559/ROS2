@@ -1,0 +1,9 @@
+/home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg/CMakeFiles/uninstall.dir
+/home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg/CMakeFiles/my_cpp_pkg_uninstall.dir
+/home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg/CMakeFiles/test.dir
+/home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg/CMakeFiles/edit_cache.dir
+/home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg/CMakeFiles/rebuild_cache.dir
+/home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg/CMakeFiles/list_install_components.dir
+/home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg/CMakeFiles/install.dir
+/home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg/CMakeFiles/install/local.dir
+/home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg/CMakeFiles/install/strip.dir
