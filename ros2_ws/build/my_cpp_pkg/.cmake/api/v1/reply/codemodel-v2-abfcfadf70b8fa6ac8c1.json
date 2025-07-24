@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-a3ca0778220397d7e5ca.json",
+					"jsonFile" : "directory-.-e408b8533a6e760614b8.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.15"
@@ -17,7 +17,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -33,12 +34,20 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
 			"targets" : 
 			[
+				{
+					"directoryIndex" : 0,
+					"id" : "cpp_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cpp_node-9c1ad57350ad8f1e6fad.json",
+					"name" : "cpp_node",
+					"projectIndex" : 0
+				},
 				{
 					"directoryIndex" : 0,
 					"id" : "my_cpp_pkg_uninstall::@6890427a1f51a3e7e1df",

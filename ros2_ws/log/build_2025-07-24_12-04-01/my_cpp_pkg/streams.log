@@ -1,0 +1,17 @@
+[0.007s] Invoking command in '/home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/may/ros2_study/ROS2/ros2_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg -- -j16 -l16
+[0.026s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.160s] -- Found rclcpp: 28.1.10 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.177s] -- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.182s] -- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.189s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.205s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.242s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.243s] -- Found rmw_fastrtps_cpp: 8.4.2 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.289s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.327s] [31mCMake Error at CMakeLists.txt:15 (install):
+[0.327s]   install does not recognize sub-command TARGET
+[0.327s] 
+[0.327s] [0m
+[0.380s] -- Configuring incomplete, errors occurred!
+[0.386s] gmake: *** [Makefile:226: cmake_check_build_system] Error 1
+[0.387s] Invoked command in '/home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/may/ros2_study/ROS2/ros2_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg -- -j16 -l16

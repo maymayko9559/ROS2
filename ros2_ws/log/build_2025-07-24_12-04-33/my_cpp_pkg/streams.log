@@ -1,0 +1,28 @@
+[0.007s] Invoking command in '/home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/may/ros2_study/ROS2/ros2_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg -- -j16 -l16
+[0.026s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.163s] -- Found rclcpp: 28.1.10 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.178s] -- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.183s] -- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.189s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.197s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.233s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.233s] -- Found rmw_fastrtps_cpp: 8.4.2 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.280s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.371s] -- Configuring done (0.3s)
+[0.372s] [31mCMake Error at CMakeLists.txt:12 (add_executable):
+[0.372s]   Cannot find source file:
+[0.372s] 
+[0.372s]     src/my_cpp_pkg/my_first_node.cpp
+[0.372s] 
+[0.372s]   Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm
+[0.372s]   .ccm .cxxm .c++m .h .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90
+[0.372s]   .f95 .f03 .hip .ispc
+[0.372s] 
+[0.373s] [0m
+[0.373s] [31mCMake Error at CMakeLists.txt:12 (add_executable):
+[0.373s]   No SOURCES given to target: cpp_node
+[0.373s] 
+[0.373s] [0m
+[0.373s] [0mCMake Generate step failed.  Build files cannot be regenerated correctly.[0m
+[0.377s] gmake: *** [Makefile:226: cmake_check_build_system] Error 1
+[0.379s] Invoked command in '/home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/may/ros2_study/ROS2/ros2_ws/install/my_py_pkg:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg -- -j16 -l16
