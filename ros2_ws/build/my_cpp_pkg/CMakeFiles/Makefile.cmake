@@ -681,5 +681,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/uninstall.dir/DependInfo.cmake"
   "CMakeFiles/my_cpp_pkg_uninstall.dir/DependInfo.cmake"
   "CMakeFiles/cpp_node.dir/DependInfo.cmake"
+  "CMakeFiles/smartphone.dir/DependInfo.cmake"
   "CMakeFiles/robot_news_station.dir/DependInfo.cmake"
   )
