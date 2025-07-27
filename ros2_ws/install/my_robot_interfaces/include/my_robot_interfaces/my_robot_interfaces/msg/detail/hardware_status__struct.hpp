@@ -43,19 +43,19 @@ struct HardwareStatus_
     {
       this->temperature = 0.0;
       this->are_motors_ready = false;
-      this->debug_messages = "";
+      this->debug_message = "";
     }
   }
 
   explicit HardwareStatus_(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
-  : debug_messages(_alloc)
+  : debug_message(_alloc)
   {
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->temperature = 0.0;
       this->are_motors_ready = false;
-      this->debug_messages = "";
+      this->debug_message = "";
     }
   }
 
@@ -66,9 +66,9 @@ struct HardwareStatus_
   using _are_motors_ready_type =
     bool;
   _are_motors_ready_type are_motors_ready;
-  using _debug_messages_type =
+  using _debug_message_type =
     std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>;
-  _debug_messages_type debug_messages;
+  _debug_message_type debug_message;
 
   // setters for named parameter idiom
   Type & set__temperature(
@@ -83,10 +83,10 @@ struct HardwareStatus_
     this->are_motors_ready = _arg;
     return *this;
   }
-  Type & set__debug_messages(
+  Type & set__debug_message(
     const std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> & _arg)
   {
-    this->debug_messages = _arg;
+    this->debug_message = _arg;
     return *this;
   }
 
@@ -138,7 +138,7 @@ struct HardwareStatus_
     if (this->are_motors_ready != other.are_motors_ready) {
       return false;
     }
-    if (this->debug_messages != other.debug_messages) {
+    if (this->debug_message != other.debug_message) {
       return false;
     }
     return true;

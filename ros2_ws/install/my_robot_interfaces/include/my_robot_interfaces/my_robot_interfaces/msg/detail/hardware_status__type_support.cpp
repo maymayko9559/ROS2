@@ -76,7 +76,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember HardwareStatu
     nullptr  // resize(index) function pointer
   },
   {
-    "debug_messages",  // name
+    "debug_message",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_STRING,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
@@ -84,7 +84,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember HardwareStatu
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(my_robot_interfaces::msg::HardwareStatus, debug_messages),  // bytes offset in struct
+    offsetof(my_robot_interfaces::msg::HardwareStatus, debug_message),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer

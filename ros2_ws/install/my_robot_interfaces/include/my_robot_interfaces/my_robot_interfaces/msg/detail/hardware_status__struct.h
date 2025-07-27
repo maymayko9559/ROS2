@@ -20,7 +20,7 @@ extern "C"
 // Constants defined in the message
 
 // Include directives for member types
-// Member 'debug_messages'
+// Member 'debug_message'
 #include "rosidl_runtime_c/string.h"
 
 /// Struct defined in msg/HardwareStatus in the package my_robot_interfaces.
@@ -28,7 +28,7 @@ typedef struct my_robot_interfaces__msg__HardwareStatus
 {
   double temperature;
   bool are_motors_ready;
-  rosidl_runtime_c__String debug_messages;
+  rosidl_runtime_c__String debug_message;
 } my_robot_interfaces__msg__HardwareStatus;
 
 // Struct for a sequence of my_robot_interfaces__msg__HardwareStatus.

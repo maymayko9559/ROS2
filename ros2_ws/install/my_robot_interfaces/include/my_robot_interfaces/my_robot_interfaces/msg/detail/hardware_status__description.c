@@ -11,10 +11,10 @@ my_robot_interfaces__msg__HardwareStatus__get_type_hash(
 {
   (void)type_support;
   static rosidl_type_hash_t hash = {1, {
-      0x06, 0x0c, 0x8b, 0xd5, 0xea, 0x0c, 0x70, 0xed,
-      0xe6, 0x52, 0x9c, 0x9b, 0x65, 0x95, 0x27, 0x8e,
-      0xa0, 0x74, 0x6b, 0x2e, 0x90, 0x94, 0x75, 0x53,
-      0xae, 0x7a, 0x51, 0xc8, 0xe1, 0x40, 0x72, 0xa2,
+      0xf9, 0xae, 0x9e, 0x7b, 0x78, 0x83, 0xff, 0x64,
+      0xbe, 0xd3, 0xda, 0x90, 0x8d, 0xcb, 0x56, 0xdb,
+      0xa6, 0xd4, 0xf2, 0x8a, 0x82, 0x26, 0x7f, 0x22,
+      0x4d, 0xa6, 0xdb, 0xb7, 0x9a, 0xbb, 0x94, 0x40,
     }};
   return &hash;
 }
@@ -33,7 +33,7 @@ static char my_robot_interfaces__msg__HardwareStatus__TYPE_NAME[] = "my_robot_in
 // Define type names, field names, and default values
 static char my_robot_interfaces__msg__HardwareStatus__FIELD_NAME__temperature[] = "temperature";
 static char my_robot_interfaces__msg__HardwareStatus__FIELD_NAME__are_motors_ready[] = "are_motors_ready";
-static char my_robot_interfaces__msg__HardwareStatus__FIELD_NAME__debug_messages[] = "debug_messages";
+static char my_robot_interfaces__msg__HardwareStatus__FIELD_NAME__debug_message[] = "debug_message";
 
 static rosidl_runtime_c__type_description__Field my_robot_interfaces__msg__HardwareStatus__FIELDS[] = {
   {
@@ -57,7 +57,7 @@ static rosidl_runtime_c__type_description__Field my_robot_interfaces__msg__Hardw
     {NULL, 0, 0},
   },
   {
-    {my_robot_interfaces__msg__HardwareStatus__FIELD_NAME__debug_messages, 14, 14},
+    {my_robot_interfaces__msg__HardwareStatus__FIELD_NAME__debug_message, 13, 13},
     {
       rosidl_runtime_c__type_description__FieldType__FIELD_TYPE_STRING,
       0,
@@ -90,7 +90,7 @@ my_robot_interfaces__msg__HardwareStatus__get_type_description(
 static char toplevel_type_raw_source[] =
   "float64 temperature\n"
   "bool are_motors_ready\n"
-  "string debug_messages";
+  "string debug_message";
 
 static char msg_encoding[] = "msg";
 
@@ -104,7 +104,7 @@ my_robot_interfaces__msg__HardwareStatus__get_individual_type_description_source
   static const rosidl_runtime_c__type_description__TypeSource source = {
     {my_robot_interfaces__msg__HardwareStatus__TYPE_NAME, 38, 38},
     {msg_encoding, 3, 3},
-    {toplevel_type_raw_source, 63, 63},
+    {toplevel_type_raw_source, 62, 62},
   };
   return &source;
 }

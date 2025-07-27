@@ -12,7 +12,7 @@
 
 
 // Include directives for member types
-// Member `debug_messages`
+// Member `debug_message`
 #include "rosidl_runtime_c/string_functions.h"
 
 bool
@@ -23,8 +23,8 @@ my_robot_interfaces__msg__HardwareStatus__init(my_robot_interfaces__msg__Hardwar
   }
   // temperature
   // are_motors_ready
-  // debug_messages
-  if (!rosidl_runtime_c__String__init(&msg->debug_messages)) {
+  // debug_message
+  if (!rosidl_runtime_c__String__init(&msg->debug_message)) {
     my_robot_interfaces__msg__HardwareStatus__fini(msg);
     return false;
   }
@@ -39,8 +39,8 @@ my_robot_interfaces__msg__HardwareStatus__fini(my_robot_interfaces__msg__Hardwar
   }
   // temperature
   // are_motors_ready
-  // debug_messages
-  rosidl_runtime_c__String__fini(&msg->debug_messages);
+  // debug_message
+  rosidl_runtime_c__String__fini(&msg->debug_message);
 }
 
 bool
@@ -57,9 +57,9 @@ my_robot_interfaces__msg__HardwareStatus__are_equal(const my_robot_interfaces__m
   if (lhs->are_motors_ready != rhs->are_motors_ready) {
     return false;
   }
-  // debug_messages
+  // debug_message
   if (!rosidl_runtime_c__String__are_equal(
-      &(lhs->debug_messages), &(rhs->debug_messages)))
+      &(lhs->debug_message), &(rhs->debug_message)))
   {
     return false;
   }
@@ -78,9 +78,9 @@ my_robot_interfaces__msg__HardwareStatus__copy(
   output->temperature = input->temperature;
   // are_motors_ready
   output->are_motors_ready = input->are_motors_ready;
-  // debug_messages
+  // debug_message
   if (!rosidl_runtime_c__String__copy(
-      &(input->debug_messages), &(output->debug_messages)))
+      &(input->debug_message), &(output->debug_message)))
   {
     return false;
   }

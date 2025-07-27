@@ -10,7 +10,7 @@ module my_robot_interfaces {
 
       boolean are_motors_ready;
 
-      string debug_messages;
+      string debug_message;
     };
   };
 };

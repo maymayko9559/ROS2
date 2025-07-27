@@ -24,15 +24,15 @@ namespace msg
 namespace builder
 {
 
-class Init_HardwareStatus_debug_messages
+class Init_HardwareStatus_debug_message
 {
 public:
-  explicit Init_HardwareStatus_debug_messages(::my_robot_interfaces::msg::HardwareStatus & msg)
+  explicit Init_HardwareStatus_debug_message(::my_robot_interfaces::msg::HardwareStatus & msg)
   : msg_(msg)
   {}
-  ::my_robot_interfaces::msg::HardwareStatus debug_messages(::my_robot_interfaces::msg::HardwareStatus::_debug_messages_type arg)
+  ::my_robot_interfaces::msg::HardwareStatus debug_message(::my_robot_interfaces::msg::HardwareStatus::_debug_message_type arg)
   {
-    msg_.debug_messages = std::move(arg);
+    msg_.debug_message = std::move(arg);
     return std::move(msg_);
   }
 
@@ -46,10 +46,10 @@ public:
   explicit Init_HardwareStatus_are_motors_ready(::my_robot_interfaces::msg::HardwareStatus & msg)
   : msg_(msg)
   {}
-  Init_HardwareStatus_debug_messages are_motors_ready(::my_robot_interfaces::msg::HardwareStatus::_are_motors_ready_type arg)
+  Init_HardwareStatus_debug_message are_motors_ready(::my_robot_interfaces::msg::HardwareStatus::_are_motors_ready_type arg)
   {
     msg_.are_motors_ready = std::move(arg);
-    return Init_HardwareStatus_debug_messages(msg_);
+    return Init_HardwareStatus_debug_message(msg_);
   }
 
 private:
