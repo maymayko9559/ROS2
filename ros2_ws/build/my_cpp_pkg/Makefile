@@ -275,6 +275,56 @@ hw_status_publisher/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_status_publisher.dir/build.make CMakeFiles/hw_status_publisher.dir/build
 .PHONY : hw_status_publisher/fast
 
+#=============================================================================
+# Target rules for targets named led_panel
+
+# Build rule for target.
+led_panel: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 led_panel
+.PHONY : led_panel
+
+# fast build rule for target.
+led_panel/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/led_panel.dir/build.make CMakeFiles/led_panel.dir/build
+.PHONY : led_panel/fast
+
+#=============================================================================
+# Target rules for targets named battery
+
+# Build rule for target.
+battery: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 battery
+.PHONY : battery
+
+# fast build rule for target.
+battery/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/battery.dir/build.make CMakeFiles/battery.dir/build
+.PHONY : battery/fast
+
+src/battery.o: src/battery.cpp.o
+.PHONY : src/battery.o
+
+# target to build an object file
+src/battery.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/battery.dir/build.make CMakeFiles/battery.dir/src/battery.cpp.o
+.PHONY : src/battery.cpp.o
+
+src/battery.i: src/battery.cpp.i
+.PHONY : src/battery.i
+
+# target to preprocess a source file
+src/battery.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/battery.dir/build.make CMakeFiles/battery.dir/src/battery.cpp.i
+.PHONY : src/battery.cpp.i
+
+src/battery.s: src/battery.cpp.s
+.PHONY : src/battery.s
+
+# target to generate assembly for a file
+src/battery.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/battery.dir/build.make CMakeFiles/battery.dir/src/battery.cpp.s
+.PHONY : src/battery.cpp.s
+
 src/hardware_status_publisher.o: src/hardware_status_publisher.cpp.o
 .PHONY : src/hardware_status_publisher.o
 
@@ -298,6 +348,30 @@ src/hardware_status_publisher.s: src/hardware_status_publisher.cpp.s
 src/hardware_status_publisher.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_status_publisher.dir/build.make CMakeFiles/hw_status_publisher.dir/src/hardware_status_publisher.cpp.s
 .PHONY : src/hardware_status_publisher.cpp.s
+
+src/led_panel.o: src/led_panel.cpp.o
+.PHONY : src/led_panel.o
+
+# target to build an object file
+src/led_panel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/led_panel.dir/build.make CMakeFiles/led_panel.dir/src/led_panel.cpp.o
+.PHONY : src/led_panel.cpp.o
+
+src/led_panel.i: src/led_panel.cpp.i
+.PHONY : src/led_panel.i
+
+# target to preprocess a source file
+src/led_panel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/led_panel.dir/build.make CMakeFiles/led_panel.dir/src/led_panel.cpp.i
+.PHONY : src/led_panel.cpp.i
+
+src/led_panel.s: src/led_panel.cpp.s
+.PHONY : src/led_panel.s
+
+# target to generate assembly for a file
+src/led_panel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/led_panel.dir/build.make CMakeFiles/led_panel.dir/src/led_panel.cpp.s
+.PHONY : src/led_panel.cpp.s
 
 src/my_first_node.o: src/my_first_node.cpp.o
 .PHONY : src/my_first_node.o
@@ -434,15 +508,23 @@ help:
 	@echo "... test"
 	@echo "... my_cpp_pkg_uninstall"
 	@echo "... uninstall"
+	@echo "... battery"
 	@echo "... cpp_node"
 	@echo "... hw_status_publisher"
+	@echo "... led_panel"
 	@echo "... number_counter"
 	@echo "... number_publisher"
 	@echo "... robot_news_station"
 	@echo "... smartphone"
+	@echo "... src/battery.o"
+	@echo "... src/battery.i"
+	@echo "... src/battery.s"
 	@echo "... src/hardware_status_publisher.o"
 	@echo "... src/hardware_status_publisher.i"
 	@echo "... src/hardware_status_publisher.s"
+	@echo "... src/led_panel.o"
+	@echo "... src/led_panel.i"
+	@echo "... src/led_panel.s"
 	@echo "... src/my_first_node.o"
 	@echo "... src/my_first_node.i"
 	@echo "... src/my_first_node.s"

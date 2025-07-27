@@ -6,6 +6,8 @@
 /home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg/CMakeFiles/number_publisher.dir
 /home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg/CMakeFiles/number_counter.dir
 /home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg/CMakeFiles/hw_status_publisher.dir
+/home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg/CMakeFiles/led_panel.dir
+/home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg/CMakeFiles/battery.dir
 /home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg/CMakeFiles/test.dir
 /home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg/CMakeFiles/edit_cache.dir
 /home/may/ros2_study/ROS2/ros2_ws/build/my_cpp_pkg/CMakeFiles/rebuild_cache.dir

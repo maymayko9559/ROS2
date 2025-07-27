@@ -712,4 +712,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/number_publisher.dir/DependInfo.cmake"
   "CMakeFiles/number_counter.dir/DependInfo.cmake"
   "CMakeFiles/hw_status_publisher.dir/DependInfo.cmake"
+  "CMakeFiles/led_panel.dir/DependInfo.cmake"
+  "CMakeFiles/battery.dir/DependInfo.cmake"
   )
