@@ -262,6 +262,43 @@ number_counter/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/number_counter.dir/build.make CMakeFiles/number_counter.dir/build
 .PHONY : number_counter/fast
 
+#=============================================================================
+# Target rules for targets named hw_status_publisher
+
+# Build rule for target.
+hw_status_publisher: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hw_status_publisher
+.PHONY : hw_status_publisher
+
+# fast build rule for target.
+hw_status_publisher/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_status_publisher.dir/build.make CMakeFiles/hw_status_publisher.dir/build
+.PHONY : hw_status_publisher/fast
+
+src/hardware_status_publisher.o: src/hardware_status_publisher.cpp.o
+.PHONY : src/hardware_status_publisher.o
+
+# target to build an object file
+src/hardware_status_publisher.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_status_publisher.dir/build.make CMakeFiles/hw_status_publisher.dir/src/hardware_status_publisher.cpp.o
+.PHONY : src/hardware_status_publisher.cpp.o
+
+src/hardware_status_publisher.i: src/hardware_status_publisher.cpp.i
+.PHONY : src/hardware_status_publisher.i
+
+# target to preprocess a source file
+src/hardware_status_publisher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_status_publisher.dir/build.make CMakeFiles/hw_status_publisher.dir/src/hardware_status_publisher.cpp.i
+.PHONY : src/hardware_status_publisher.cpp.i
+
+src/hardware_status_publisher.s: src/hardware_status_publisher.cpp.s
+.PHONY : src/hardware_status_publisher.s
+
+# target to generate assembly for a file
+src/hardware_status_publisher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw_status_publisher.dir/build.make CMakeFiles/hw_status_publisher.dir/src/hardware_status_publisher.cpp.s
+.PHONY : src/hardware_status_publisher.cpp.s
+
 src/my_first_node.o: src/my_first_node.cpp.o
 .PHONY : src/my_first_node.o
 
@@ -398,10 +435,14 @@ help:
 	@echo "... my_cpp_pkg_uninstall"
 	@echo "... uninstall"
 	@echo "... cpp_node"
+	@echo "... hw_status_publisher"
 	@echo "... number_counter"
 	@echo "... number_publisher"
 	@echo "... robot_news_station"
 	@echo "... smartphone"
+	@echo "... src/hardware_status_publisher.o"
+	@echo "... src/hardware_status_publisher.i"
+	@echo "... src/hardware_status_publisher.s"
 	@echo "... src/my_first_node.o"
 	@echo "... src/my_first_node.i"
 	@echo "... src/my_first_node.s"
