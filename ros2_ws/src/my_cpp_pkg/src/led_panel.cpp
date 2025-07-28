@@ -51,3 +51,12 @@ private:
     rclcpp::TimerBase::SharedPtr led_states_timer_;
     rclcpp::Service<my_robot_interfaces::srv::SetLed>::SharedPtr set_led_service_;
 };
+
+int main(int argc, char **argv)
+{
+    rclcpp::init(argc, argv);
+    auto node = std::make_shared<LedPanelNode>();
+    rclcpp::spin(node);
+    rclcpp::shutdown();
+    return 0;
+}
