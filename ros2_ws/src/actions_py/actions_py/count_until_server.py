@@ -24,17 +24,20 @@ class CountUntilServerNode(Node):
         self.get_logger().info("Accepting the goal")
         return GoalResponse.ACCEPT 
 
-    def execute_callback(self, goal_handle: ServerGoalHandle):
+    def execute_callback(self, goal_handle):
         # Get request from goal
         target_number = goal_handle.request.target_number
         period = goal_handle.request.period
 
         # Execute the action
         self.get_logger().info("Executing the goal.")
+        feedback = CountUntil.Feedback()
         counter = 0
         for i in range(target_number):
             counter += 1
             self.get_logger().info(str(counter))
+            feedback.current_number = counter
+            goal_handle.publish_feedback(feedback)
             time.sleep(period)
 
         # Once doen, set goal final state
