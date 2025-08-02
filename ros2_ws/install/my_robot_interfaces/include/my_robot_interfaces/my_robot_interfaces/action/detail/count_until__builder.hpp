@@ -121,6 +121,26 @@ namespace my_robot_interfaces
 namespace action
 {
 
+namespace builder
+{
+
+class Init_CountUntil_Feedback_current_number
+{
+public:
+  Init_CountUntil_Feedback_current_number()
+  : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
+  {}
+  ::my_robot_interfaces::action::CountUntil_Feedback current_number(::my_robot_interfaces::action::CountUntil_Feedback::_current_number_type arg)
+  {
+    msg_.current_number = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::my_robot_interfaces::action::CountUntil_Feedback msg_;
+};
+
+}  // namespace builder
 
 }  // namespace action
 
@@ -131,7 +151,7 @@ template<>
 inline
 auto build<::my_robot_interfaces::action::CountUntil_Feedback>()
 {
-  return ::my_robot_interfaces::action::CountUntil_Feedback(rosidl_runtime_cpp::MessageInitialization::ZERO);
+  return my_robot_interfaces::action::builder::Init_CountUntil_Feedback_current_number();
 }
 
 }  // namespace my_robot_interfaces

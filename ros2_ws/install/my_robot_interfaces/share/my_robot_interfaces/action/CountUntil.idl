@@ -18,10 +18,9 @@ module my_robot_interfaces {
       int64 reached_number;
     };
     @verbatim (language="comment", text=
-      " Feedback (optional)" "\n"
-      "int64 current_number")
+      "Feedback (optional)")
     struct CountUntil_Feedback {
-      uint8 structure_needs_at_least_one_member;
+      int64 current_number;
     };
   };
 };

@@ -95,9 +95,9 @@
         "type_name": "my_robot_interfaces/action/CountUntil_Feedback",
         "fields": [
           {
-            "name": "structure_needs_at_least_one_member",
+            "name": "current_number",
             "type": {
-              "type_id": 3,
+              "type_id": 8,
               "capacity": 0,
               "string_capacity": 0,
               "nested_type_name": ""
@@ -466,7 +466,7 @@
   "type_hashes": [
     {
       "type_name": "my_robot_interfaces/action/CountUntil",
-      "hash_string": "RIHS01_b5ca509d7d5ed4ea8e08f9ceaa114b4aa67899cd8d732042be55cd3346ce79c0"
+      "hash_string": "RIHS01_db543f4ad9c501d9b94ccc6bacb9fde1cbadda9fd14a1a397478e0d04af5ce11"
     },
     {
       "type_name": "builtin_interfaces/msg/Time",
@@ -474,11 +474,11 @@
     },
     {
       "type_name": "my_robot_interfaces/action/CountUntil_Feedback",
-      "hash_string": "RIHS01_e0a5cb0fea21396c3da5e8e756b9e3076d7e92da600f6f26dc91a61262060a16"
+      "hash_string": "RIHS01_312ca1603cf29c5685480d575369e616df7a7a0873796f7100eb3145aff3d19d"
     },
     {
       "type_name": "my_robot_interfaces/action/CountUntil_FeedbackMessage",
-      "hash_string": "RIHS01_5642eab4891edf02171a111360c7a870812b7a8033d4ec2e33881735eb7a6f87"
+      "hash_string": "RIHS01_cba7f35a40042302157e1a5de97a1793c186297711c05384e17425d1c9d1f664"
     },
     {
       "type_name": "my_robot_interfaces/action/CountUntil_GetResult",

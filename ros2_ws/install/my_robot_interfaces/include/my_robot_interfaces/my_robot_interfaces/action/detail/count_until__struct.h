@@ -60,7 +60,7 @@ typedef struct my_robot_interfaces__action__CountUntil_Result__Sequence
 /// Struct defined in action/CountUntil in the package my_robot_interfaces.
 typedef struct my_robot_interfaces__action__CountUntil_Feedback
 {
-  uint8_t structure_needs_at_least_one_member;
+  int64_t current_number;
 } my_robot_interfaces__action__CountUntil_Feedback;
 
 // Struct for a sequence of my_robot_interfaces__action__CountUntil_Feedback.
