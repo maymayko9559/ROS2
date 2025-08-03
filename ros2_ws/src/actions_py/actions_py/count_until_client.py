@@ -34,8 +34,6 @@ class CountUntilClientNode(Node):
         self.goal_handle_.cancel_goal_async()
         self.timer_.cancel()
 
-    
-
     def goal_response_callback(self, future):
         self.goal_handle_: ClientGoalHandle = future.result()
         if self.goal_handle_.accepted:
@@ -65,7 +63,6 @@ def main(args=None):
     rclpy.init(args=args)
     node = CountUntilClientNode() 
     node.send_goal(6, 1.0)
-    node.send_goal(6, 0.7)
     rclpy.spin(node)
     rclpy.shutdown()
 
