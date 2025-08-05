@@ -27,7 +27,14 @@ private:
         const rclcpp_action::GoalUUID &uuid, std::shared_ptr<const CountUntil::Goal> goal)
     {
         (void)uuid;
-        (void)goal;
+
+        RCLCPP_INFO(this->get_logger(), "Received a goal");
+
+        if (goal->target_number <= 0.0) {
+            RCLCPP_INFO(this->get_logger(), "Rejecting the goal");
+            return rclcpp_action::GoalResponse::REJECT;
+        }
+        RCLCPP_INFO(this->get_logger(), "Accepting the goal");
         return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
     }
 
