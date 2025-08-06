@@ -70,7 +70,7 @@ private:
         // Set final state and return result
         auto result = std::make_shared<CountUntil::Result>();
         result->reached_number = counter;
-        goal_handle->succeed(result);
+        goal_handle->abort(result);
 
     }
 
