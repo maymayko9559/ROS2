@@ -34,18 +34,13 @@ public:
         //Send the goal
         RCLCPP_INFO(this->get_logger(), "Sending a goal");
         count_until_client_->async_send_goal(goal, options);
+
+        // Cancel the goal (test)
+        // timer_ = this->create_wall_timer(std::chrono::seconds(2), 
+        //                                 std::bind(&CountUntilClientNode::timer_callback, this));
     }
 
-private:
-    // Callback to know if the goal was accepted or rejected
-    void goal_response_callback(const CountUntilGoalhandle::SharedPtr &goal_handle)
-    {
-        if(!goal_handle) {
-            RCLCPP_INFO(this->get_logger(), "Goal got rejected.");
-        } else {
-            RCLCPP_INFO(this->get_logger(), "Goal got accepted.");
-        }
-    }
+
 
 
     // Callback to receive the result once the goal is done
@@ -57,9 +52,35 @@ private:
             RCLCPP_INFO(this->get_logger(), "Succeeded!");
         } else if (status == rclcpp_action::ResultCode::ABORTED){
             RCLCPP_ERROR(this->get_logger(), "Aborted");
+        } 
+        else if (status==rclcpp_action::ResultCode::CANCELED){
+            RCLCPP_WARN(this->get_logger(), "Canceled");
         }
         int reached_number = result.result->reached_number;
         RCLCPP_INFO(this->get_logger(), "Result: %d", reached_number);
+
+
+    }
+
+private:
+    void timer_callback() 
+    {
+        RCLCPP_INFO(this->get_logger(), "Cancel the goal");
+        count_until_client_->async_cancel_goal(goal_handle_);
+        timer_->cancel();
+    }
+
+    // Callback to know if the goal was accepted or rejected
+    void goal_response_callback(const CountUntilGoalhandle::SharedPtr &goal_handle)
+    {
+        if(!goal_handle) {
+            RCLCPP_INFO(this->get_logger(), "Goal got rejected.");
+        } else {
+            this->goal_handle_ = goal_handle;
+            RCLCPP_INFO(this->get_logger(), "Goal got accepted.");
+        }
+    
+
     }
 
     // Callback to receive feedback during goal execution
@@ -72,6 +93,8 @@ private:
     }
 
     rclcpp_action::Client<CountUntil>::SharedPtr count_until_client_;
+    rclcpp::TimerBase::SharedPtr timer_;
+    CountUntilGoalhandle::SharedPtr goal_handle_;
 };
 
 int main(int argc, char **argv)
