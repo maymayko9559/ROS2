@@ -58,21 +58,26 @@ private:
         double period = goal_handle->get_goal()->period;
 
         // Execute the action
-        int counter =0;
+        int counter = 0;
+        auto feedback = std::make_shared<CountUntil::Feedback>();
         rclcpp::Rate loop_rate(1.0/period);
+        std::this_thread::sleep_for(std::chrono::milliseconds(50));
         for (int i=0; i< target_number;i++) 
         {
             counter++;
             RCLCPP_INFO(this->get_logger(), "%d", counter);
+            feedback->current_number = counter;
+            goal_handle->publish_feedback(feedback);
             loop_rate.sleep();
         }
 
         // Set final state and return result
         auto result = std::make_shared<CountUntil::Result>();
         result->reached_number = counter;
-        goal_handle->abort(result);
+        goal_handle->succeed(result);
 
     }
+
 
     rclcpp_action::Server<CountUntil>::SharedPtr count_until_server_;
 };

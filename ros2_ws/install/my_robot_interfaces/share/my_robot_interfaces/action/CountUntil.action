@@ -6,4 +6,4 @@ float64 period
 int64 reached_number
 ---
 # Feedback (optional)
-#int64 current_number
+int64 current_number
