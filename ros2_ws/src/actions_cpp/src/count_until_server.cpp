@@ -34,21 +34,35 @@ private:
         RCLCPP_INFO(this->get_logger(), "Received a goal");
 
         // Policy: refuse new goal if one goal is being active.
-        {
-            std::lock_guard<std::mutex> lock(mutex_);
+        // {
+        //     std::lock_guard<std::mutex> lock(mutex_);
 
-            if(goal_handle_) {
-                if (goal_handle_->is_active()) {
-                    RCLCPP_INFO(this->get_logger(), "A goal is still active, reject new goal");
-                    return rclcpp_action::GoalResponse::REJECT;
-                }
-            }
-        }
+        //     if(goal_handle_) {
+        //         if (goal_handle_->is_active()) {
+        //             RCLCPP_INFO(this->get_logger(), "A goal is still active, reject new goal");
+        //             return rclcpp_action::GoalResponse::REJECT;
+        //         }
+        //     }
+        // }
 
         if (goal->target_number <= 0.0) {
             RCLCPP_INFO(this->get_logger(), "Rejecting the goal");
             return rclcpp_action::GoalResponse::REJECT;
         }
+
+        // Policy: preempt existing goal when receiving a new valid goal
+        {
+            std::lock_guard<std::mutex> lock(mutex_);
+
+            if(goal_handle_) {
+                if(goal_handle_->is_active()) {
+                    RCLCPP_INFO(this->get_logger(), "Abrot current goal and accept new goal.");
+                    preempted_goal_id_ = goal_handle_->get_goal_id();
+                }
+            }
+        }
+
+
         RCLCPP_INFO(this->get_logger(), "Accepting the goal");
         return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
     }
@@ -88,6 +102,15 @@ private:
         std::this_thread::sleep_for(std::chrono::milliseconds(50));
         for (int i=0; i< target_number;i++) 
         {
+            {
+                std::lock_guard<std::mutex> lock(mutex_);
+                if(goal_handle->get_goal_id() == preempted_goal_id_)
+                {
+                    result->reached_number = counter;
+                    goal_handle->abort(result);   
+                    return;            
+                }
+            }
             if (goal_handle->is_canceling()) {
                 RCLCPP_INFO(this->get_logger(), "cancelling the goal");
 
@@ -108,7 +131,7 @@ private:
 
     }
 
-
+    rclcpp_action::GoalUUID preempted_goal_id_;
     rclcpp_action::Server<CountUntil>::SharedPtr count_until_server_;
     rclcpp::CallbackGroup::SharedPtr cb_group_;
     std::mutex mutex_;
