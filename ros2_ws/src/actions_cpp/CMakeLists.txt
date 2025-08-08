@@ -11,6 +11,10 @@ find_package(rclcpp REQUIRED)
 find_package(rclcpp_action REQUIRED)
 find_package(my_robot_interfaces REQUIRED)
 
+
+add_executable(count_until_server_queue_goals src/count_until_server_queue_goals.cpp)
+ament_target_dependencies(count_until_server_queue_goals rclcpp rclcpp_action my_robot_interfaces)
+
 add_executable(count_until_server src/count_until_server.cpp)
 ament_target_dependencies(count_until_server rclcpp rclcpp_action my_robot_interfaces)
 
@@ -19,6 +23,7 @@ ament_target_dependencies(count_until_client rclcpp rclcpp_action my_robot_inter
 
 install(TARGETS
   count_until_server
+  count_until_server_queue_goals
   count_until_client
   DESTINATION lib/${PROJECT_NAME}/
 )
