@@ -1,0 +1,7 @@
+int64 position # meter
+int64 velocity # meter/second
+---
+int64 position 
+string message
+---
+int64 current_position

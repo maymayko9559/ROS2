@@ -1,12 +1,12 @@
 // generated from rosidl_generator_c/resource/idl__type_support.c.em
-// with input from my_robot_interfaces:action/CountUntil.idl
+// with input from my_robot_interfaces:action/MoveRobot.idl
 // generated code does not contain a copyright notice
 
 #include <string.h>
 
-#include "my_robot_interfaces/action/detail/count_until__struct.h"
-#include "my_robot_interfaces/action/detail/count_until__functions.h"
-#include "my_robot_interfaces/action/detail/count_until__type_support.h"
+#include "my_robot_interfaces/action/detail/move_robot__struct.h"
+#include "my_robot_interfaces/action/detail/move_robot__type_support.h"
+#include "my_robot_interfaces/action/detail/move_robot__functions.h"
 #include "rosidl_typesupport_interface/macros.h"
 
 #ifdef __cplusplus
@@ -20,7 +20,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_CREATE_EVENT_MESSAGE_SYMBOL_NAME(
   rosidl_typesupport_c,
   my_robot_interfaces,
   action,
-  CountUntil_SendGoal
+  MoveRobot_SendGoal
 )(
   const rosidl_service_introspection_info_t * info,
   rcutils_allocator_t * allocator,
@@ -30,8 +30,8 @@ ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_CREATE_EVENT_MESSAGE_SYMBOL_NAME(
   if (!allocator || !info) {
     return NULL;
   }
-  my_robot_interfaces__action__CountUntil_SendGoal_Event * event_msg = (my_robot_interfaces__action__CountUntil_SendGoal_Event *)(allocator->allocate(sizeof(my_robot_interfaces__action__CountUntil_SendGoal_Event), allocator->state));
-  if (!my_robot_interfaces__action__CountUntil_SendGoal_Event__init(event_msg)) {
+  my_robot_interfaces__action__MoveRobot_SendGoal_Event * event_msg = (my_robot_interfaces__action__MoveRobot_SendGoal_Event *)(allocator->allocate(sizeof(my_robot_interfaces__action__MoveRobot_SendGoal_Event), allocator->state));
+  if (!my_robot_interfaces__action__MoveRobot_SendGoal_Event__init(event_msg)) {
     allocator->deallocate(event_msg, allocator->state);
     return NULL;
   }
@@ -42,19 +42,19 @@ ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_CREATE_EVENT_MESSAGE_SYMBOL_NAME(
   event_msg->info.stamp.nanosec = info->stamp_nanosec;
   memcpy(event_msg->info.client_gid, info->client_gid, 16);
   if (request_message) {
-    my_robot_interfaces__action__CountUntil_SendGoal_Request__Sequence__init(
+    my_robot_interfaces__action__MoveRobot_SendGoal_Request__Sequence__init(
       &event_msg->request,
       1);
-    if (!my_robot_interfaces__action__CountUntil_SendGoal_Request__copy((const my_robot_interfaces__action__CountUntil_SendGoal_Request *)(request_message), event_msg->request.data)) {
+    if (!my_robot_interfaces__action__MoveRobot_SendGoal_Request__copy((const my_robot_interfaces__action__MoveRobot_SendGoal_Request *)(request_message), event_msg->request.data)) {
       allocator->deallocate(event_msg, allocator->state);
       return NULL;
     }
   }
   if (response_message) {
-    my_robot_interfaces__action__CountUntil_SendGoal_Response__Sequence__init(
+    my_robot_interfaces__action__MoveRobot_SendGoal_Response__Sequence__init(
       &event_msg->response,
       1);
-    if (!my_robot_interfaces__action__CountUntil_SendGoal_Response__copy((const my_robot_interfaces__action__CountUntil_SendGoal_Response *)(response_message), event_msg->response.data)) {
+    if (!my_robot_interfaces__action__MoveRobot_SendGoal_Response__copy((const my_robot_interfaces__action__MoveRobot_SendGoal_Response *)(response_message), event_msg->response.data)) {
       allocator->deallocate(event_msg, allocator->state);
       return NULL;
     }
@@ -68,7 +68,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_DESTROY_EVENT_MESSAGE_SYMBOL_NAME(
   rosidl_typesupport_c,
   my_robot_interfaces,
   action,
-  CountUntil_SendGoal
+  MoveRobot_SendGoal
 )(
   void * event_msg,
   rcutils_allocator_t * allocator)
@@ -79,9 +79,9 @@ ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_DESTROY_EVENT_MESSAGE_SYMBOL_NAME(
   if (NULL == event_msg) {
     return false;
   }
-  my_robot_interfaces__action__CountUntil_SendGoal_Event * _event_msg = (my_robot_interfaces__action__CountUntil_SendGoal_Event *)(event_msg);
+  my_robot_interfaces__action__MoveRobot_SendGoal_Event * _event_msg = (my_robot_interfaces__action__MoveRobot_SendGoal_Event *)(event_msg);
 
-  my_robot_interfaces__action__CountUntil_SendGoal_Event__fini((my_robot_interfaces__action__CountUntil_SendGoal_Event *)(_event_msg));
+  my_robot_interfaces__action__MoveRobot_SendGoal_Event__fini((my_robot_interfaces__action__MoveRobot_SendGoal_Event *)(_event_msg));
   if (_event_msg->request.data) {
     allocator->deallocate(_event_msg->request.data, allocator->state);
   }
@@ -98,7 +98,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_CREATE_EVENT_MESSAGE_SYMBOL_NAME(
   rosidl_typesupport_c,
   my_robot_interfaces,
   action,
-  CountUntil_GetResult
+  MoveRobot_GetResult
 )(
   const rosidl_service_introspection_info_t * info,
   rcutils_allocator_t * allocator,
@@ -108,8 +108,8 @@ ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_CREATE_EVENT_MESSAGE_SYMBOL_NAME(
   if (!allocator || !info) {
     return NULL;
   }
-  my_robot_interfaces__action__CountUntil_GetResult_Event * event_msg = (my_robot_interfaces__action__CountUntil_GetResult_Event *)(allocator->allocate(sizeof(my_robot_interfaces__action__CountUntil_GetResult_Event), allocator->state));
-  if (!my_robot_interfaces__action__CountUntil_GetResult_Event__init(event_msg)) {
+  my_robot_interfaces__action__MoveRobot_GetResult_Event * event_msg = (my_robot_interfaces__action__MoveRobot_GetResult_Event *)(allocator->allocate(sizeof(my_robot_interfaces__action__MoveRobot_GetResult_Event), allocator->state));
+  if (!my_robot_interfaces__action__MoveRobot_GetResult_Event__init(event_msg)) {
     allocator->deallocate(event_msg, allocator->state);
     return NULL;
   }
@@ -120,19 +120,19 @@ ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_CREATE_EVENT_MESSAGE_SYMBOL_NAME(
   event_msg->info.stamp.nanosec = info->stamp_nanosec;
   memcpy(event_msg->info.client_gid, info->client_gid, 16);
   if (request_message) {
-    my_robot_interfaces__action__CountUntil_GetResult_Request__Sequence__init(
+    my_robot_interfaces__action__MoveRobot_GetResult_Request__Sequence__init(
       &event_msg->request,
       1);
-    if (!my_robot_interfaces__action__CountUntil_GetResult_Request__copy((const my_robot_interfaces__action__CountUntil_GetResult_Request *)(request_message), event_msg->request.data)) {
+    if (!my_robot_interfaces__action__MoveRobot_GetResult_Request__copy((const my_robot_interfaces__action__MoveRobot_GetResult_Request *)(request_message), event_msg->request.data)) {
       allocator->deallocate(event_msg, allocator->state);
       return NULL;
     }
   }
   if (response_message) {
-    my_robot_interfaces__action__CountUntil_GetResult_Response__Sequence__init(
+    my_robot_interfaces__action__MoveRobot_GetResult_Response__Sequence__init(
       &event_msg->response,
       1);
-    if (!my_robot_interfaces__action__CountUntil_GetResult_Response__copy((const my_robot_interfaces__action__CountUntil_GetResult_Response *)(response_message), event_msg->response.data)) {
+    if (!my_robot_interfaces__action__MoveRobot_GetResult_Response__copy((const my_robot_interfaces__action__MoveRobot_GetResult_Response *)(response_message), event_msg->response.data)) {
       allocator->deallocate(event_msg, allocator->state);
       return NULL;
     }
@@ -146,7 +146,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_DESTROY_EVENT_MESSAGE_SYMBOL_NAME(
   rosidl_typesupport_c,
   my_robot_interfaces,
   action,
-  CountUntil_GetResult
+  MoveRobot_GetResult
 )(
   void * event_msg,
   rcutils_allocator_t * allocator)
@@ -157,9 +157,9 @@ ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_DESTROY_EVENT_MESSAGE_SYMBOL_NAME(
   if (NULL == event_msg) {
     return false;
   }
-  my_robot_interfaces__action__CountUntil_GetResult_Event * _event_msg = (my_robot_interfaces__action__CountUntil_GetResult_Event *)(event_msg);
+  my_robot_interfaces__action__MoveRobot_GetResult_Event * _event_msg = (my_robot_interfaces__action__MoveRobot_GetResult_Event *)(event_msg);
 
-  my_robot_interfaces__action__CountUntil_GetResult_Event__fini((my_robot_interfaces__action__CountUntil_GetResult_Event *)(_event_msg));
+  my_robot_interfaces__action__MoveRobot_GetResult_Event__fini((my_robot_interfaces__action__MoveRobot_GetResult_Event *)(_event_msg));
   if (_event_msg->request.data) {
     allocator->deallocate(_event_msg->request.data, allocator->state);
   }
