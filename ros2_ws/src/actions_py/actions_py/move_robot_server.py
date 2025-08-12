@@ -4,7 +4,7 @@ import time
 import threading
 from rclpy.node import Node
 from rclpy.action import ActionServer
-from rclpy.action.server import ServerGoalHandle, GoalResponse
+from rclpy.action.server import ServerGoalHandle, GoalResponse, CancelResponse
 from my_robot_interfaces.action import MoveRobot
 from rclpy.executors import MultiThreadedExecutor
 
@@ -19,6 +19,7 @@ class MoveRobotServerNode(Node):
             MoveRobot,
             "move_robot",
             goal_callback=self.goal_callback,
+            cancel_callback=self.cancel_callback,
             execute_callback=self.execute_callback,
             )
         self.get_logger().info("Action server has been started.")
@@ -33,10 +34,15 @@ class MoveRobotServerNode(Node):
         
         # new goal is valid, abort previous goal and accept new goal.
         if self.goal_handle_ is not None and self.goal_handle_.is_active:
+            self.get_logger().info("Preempt previous goal via abort()")
             self.goal_handle_.abort()
 
         self.get_logger().info("Goal is accepted")
         return GoalResponse.ACCEPT
+
+    def cancel_callback(self, goal_handle: ServerGoalHandle):
+        self.get_logger().info("Received a cancel request")
+        return CancelResponse.ACCEPT
 
     def execute_callback(self, goal_handle: ServerGoalHandle):
         with self.goal_lock_:
@@ -54,6 +60,17 @@ class MoveRobotServerNode(Node):
             if not goal_handle.is_active:
                 result.position = self.robot_position_
                 result.message = "Preempted by another goal"
+                return result
+
+            if goal_handle.is_cancel_requested:
+                self.get_logger().info("Execute loop noticed cancel request")
+                result.position = self.robot_position_
+                if goal_position == self.robot_position_:
+                    result.message = "Success after cancel request"
+                    goal_handle.succeed()
+                else:
+                    result.message = "Canceled"
+                    goal_handle.canceled()
                 return result
 
             diff = goal_position - self.robot_position_
