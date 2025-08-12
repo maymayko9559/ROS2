@@ -1,21 +1,26 @@
 #!/usr/bin/env python3
 import rclpy
 import time
+import threading
 from rclpy.node import Node
 from rclpy.action import ActionServer
 from rclpy.action.server import ServerGoalHandle, GoalResponse
 from my_robot_interfaces.action import MoveRobot
+from rclpy.executors import MultiThreadedExecutor
 
 class MoveRobotServerNode(Node): 
     def __init__(self):
         super().__init__("move_robot_server") 
+        self.goal_lock_ = threading.Lock()
+        self.goal_handle_: ServerGoalHandle = None
         self.robot_position_ = 50
         self.move_robot_server_ = ActionServer(
             self,
             MoveRobot,
             "move_robot",
             goal_callback=self.goal_callback,
-            execute_callback=self.execute_callback)
+            execute_callback=self.execute_callback,
+            )
         self.get_logger().info("Action server has been started.")
         self.get_logger().info("Robot position: " + str(self.robot_position_))
 
@@ -26,10 +31,17 @@ class MoveRobotServerNode(Node):
             self.get_logger().warn("Reject goal. Invalid position/velocity")
             return GoalResponse.REJECT
         
+        # new goal is valid, abort previous goal and accept new goal.
+        if self.goal_handle_ is not None and self.goal_handle_.is_active:
+            self.goal_handle_.abort()
+
         self.get_logger().info("Goal is accepted")
         return GoalResponse.ACCEPT
 
     def execute_callback(self, goal_handle: ServerGoalHandle):
+        with self.goal_lock_:
+            self.goal_handle_ = goal_handle
+
         goal_position = goal_handle.request.position
         velocity = goal_handle.request.velocity
 
@@ -39,6 +51,11 @@ class MoveRobotServerNode(Node):
         self.get_logger().info("Execute goal")
 
         while rclpy.ok():
+            if not goal_handle.is_active:
+                result.position = self.robot_position_
+                result.message = "Preempted by another goal"
+                return result
+
             diff = goal_position - self.robot_position_
 
             if diff == 0:
@@ -69,7 +86,7 @@ def main(args=None):
 
     rclpy.init(args=args)
     node = MoveRobotServerNode() 
-    rclpy.spin(node)
+    rclpy.spin(node, MultiThreadedExecutor())
     rclpy.shutdown()
 
 
