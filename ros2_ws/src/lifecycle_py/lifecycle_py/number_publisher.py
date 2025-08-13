@@ -13,7 +13,6 @@ class NumberPublisherNode(LifecycleNode):
         self.number_publisher_ = None
         self.number_timer_ = None
 
-
     # Create Ros2 communications, connect to HW
     def on_configure(self, previous_state: LifecycleState):
         self.get_logger().info("IN on_configure")
@@ -47,6 +46,15 @@ class NumberPublisherNode(LifecycleNode):
         self.destroy_lifecycle_publisher(self.number_publisher_)
         self.destroy_timer(self.number_timer_)
         return TransitionCallbackReturn.SUCCESS       
+
+    # Process erros, deactivate + cleanup
+    def on_error(self, previous_state: LifecycleState):
+        self.get_logger().info("IN on_error")
+        self.destroy_lifecycle_publisher(self.number_publisher_)
+        self.destroy_timer(self.number_timer_)
+
+        # do some checks, if ok, then return SUCCESS, if not FAILURE
+        return TransitionCallbackReturn.SUCCESS
 
     def publish_number(self):
         msg = Int64()
