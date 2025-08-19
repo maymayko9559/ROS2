@@ -6,7 +6,7 @@ using MoveRobot = my_robot_interfaces::action::MoveRobot;
 using MoveRobotGoalHandle = rclcpp_action::ServerGoalHandle<MoveRobot>;
 using namespace std::placeholders;
 
-class MoveRobotServerNode: public rclcpp::Node
+class MoveRobotServerNode : public rclcpp::Node
 {
 public:
     MoveRobotServerNode() : Node("move_robot_server")

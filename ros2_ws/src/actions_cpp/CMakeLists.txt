@@ -10,7 +10,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_action REQUIRED)
 find_package(my_robot_interfaces REQUIRED)
-
+find_package(example_interfaces REQUIRED)
 
 add_executable(count_until_server_queue_goals src/count_until_server_queue_goals.cpp)
 ament_target_dependencies(count_until_server_queue_goals rclcpp rclcpp_action my_robot_interfaces)
